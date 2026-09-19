@@ -2,6 +2,9 @@ syntax = "proto3";
 
 package pitlens.race.v1;
 
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
 option java_package = "io.pitlens.contracts.race.v1";
 option java_multiple_files = true;
 
@@ -10,4 +13,6 @@ message LapCompleted {
   int64 session_id = 1;
   int32 driver_number = 2;
   int32 lap_number = 3;
+  google.protobuf.Duration lap_time = 4;
+  google.protobuf.Timestamp occurred_at = 5;
 }

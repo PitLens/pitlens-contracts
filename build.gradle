@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.9.6'
+}
+
+group = 'io.pitlens'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-java:4.36.2'
+
+    testImplementation platform('org.junit:junit-bom:6.0.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:4.36.2'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

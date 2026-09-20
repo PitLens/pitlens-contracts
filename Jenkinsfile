@@ -4,7 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew clean build'
+                sh './gradlew clean assemble'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh './gradlew test'
             }
         }
     }
